@@ -1,6 +1,8 @@
 package modelo.basico;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 //ESSA ANOTAÇÃO PRECISA SER FEITA,PARA DIZER QUE A CLASSE VAI SER UMA ENTIDADE
@@ -14,8 +16,12 @@ import javax.persistence.Id;
 //A CLASSE DEVE TER OS ATRIBUTOS PRIVATES, E OS MÉTODOS GET E SET
 public class Usuario {
 	
-	//ESSA ANOTAÇÃO DIZ QUE QUAL É A CHAVE PRIMARIA 
+	//@ Id > ESSA ANOTAÇÃO DIZ QUE QUAL É A CHAVE PRIMARIA 
+	//@ GeneratedValue > Auto-increment,chave automatica
+	// @ (strategy = GenerationType.IDENTITY) não cria uma tabela a parte, hibernate.sequence
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
