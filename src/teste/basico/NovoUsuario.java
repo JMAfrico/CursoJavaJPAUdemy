@@ -19,7 +19,7 @@ public class NovoUsuario {
 		EntityManager em = fabrica.createEntityManager();
 		
 		//INSTANCIA DE NOVO USUARIO DA ENTIDADE USUARIO
-		Usuario novoUsuario = new Usuario ("Joazerass","joao.silva351@fatec.sp.gov.br");
+		Usuario novoUsuario = new Usuario ("Roberto Africo","Roberto@yahoo.com");
 		
 		//INICIA TRANSAÇÃO, PREENCHE OS DADOS, FINALIZA A INCLUSÃO
 		em.getTransaction().begin();
