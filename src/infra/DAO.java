@@ -78,10 +78,7 @@ public class DAO <Tipo>{
 		
 	}
 	
-	public DAO<Tipo> alterarCompleto(Long id) {
-		return this.abrirTransacao().buscarID(id).autenticacao().fecharTransacao();
-	}
-	
+
 	public DAO<Tipo> deletarCompleto() {
 		em.getTransaction().commit();
 		return this;
