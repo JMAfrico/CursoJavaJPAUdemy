@@ -14,7 +14,7 @@ public class DAO <Tipo>{
 	private static EntityManager em;
 	private Class<Tipo> classe;
 	
-	//BLOCO STATIC INICIALIZA ASSIM QUE INICIA O SISTEMA
+	//BLOCO STATIC INICIALIZA ASSIM QUE INICIA O SISTEMA, É BOM COLOCAR TRY CATCH POIS SE O SISTEMA DER ERRO NA INICIALIZAÇÃO É TRATADO
 	static {
 		try {
 			
@@ -35,24 +35,15 @@ public class DAO <Tipo>{
 		em = fabrica.createEntityManager();
 	}
 	
+	//---------------------------------//
+	
 	public DAO<Tipo> abrirTransacao() {
 		em.getTransaction().begin();
-		return this;
+		return this;//faz com que a classe seja recursiva,posso chamar novamente
 	}
 	
 	public DAO<Tipo> fecharTransacao() {
 		em.getTransaction().commit();
-		return this;
-	}
-	
-	public DAO<Tipo> buscarID(Long id) {
-		em.find(classe, id);
-		return this;
-	}
-	
-	public DAO<Tipo> autenticacao(Tipo classe) {
-		em.detach(classe);
-		em.merge(classe);
 		return this;
 	}
 	
@@ -65,6 +56,9 @@ public class DAO <Tipo>{
 		return this.abrirTransacao().incluirTransacao(entidade).fecharTransacao();
 	}
 	
+	//----------------------------------//
+	
+
 	public List<Tipo> obterTodos (int quantidade, int deslocamento) {
 		if(classe == null) {
 			throw new UnsupportedOperationException("Classe nula.");
@@ -78,15 +72,11 @@ public class DAO <Tipo>{
 		
 	}
 	
-
-	public DAO<Tipo> deletarCompleto() {
-		em.getTransaction().commit();
-		return this;
-	}
+	//-----------------------------------//
 	
 	public void fechar() {
 		em.close();
 	}
 	
-	
+
 }

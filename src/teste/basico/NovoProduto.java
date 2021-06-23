@@ -7,7 +7,6 @@ import modelo.basico.Produto;
 
 public class NovoProduto {
 
-
 	public static void main(String[] args) {
 		
 		//Cria um DAO do tipo Produto(Já que a classe é genérica!)
