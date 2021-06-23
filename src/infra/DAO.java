@@ -74,7 +74,7 @@ public class DAO <Tipo>{
 	
 	//-----------------------------------//
 	
-	public void fechar() {
+	public void fecharEntityManager() {
 		em.close();
 	}
 	
