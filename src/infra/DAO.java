@@ -52,12 +52,13 @@ public class DAO <Tipo>{
 		return this;
 	}
 	
+	
 	public DAO<Tipo> incluirCompleto(Tipo entidade) {
 		return this.abrirTransacao().incluirTransacao(entidade).fecharTransacao();
 	}
 	
 	//----------------------------------//
-	
+	//LISTA ITENS DO BD
 
 	public List<Tipo> obterTodos (int quantidade, int deslocamento) {
 		if(classe == null) {
@@ -78,5 +79,6 @@ public class DAO <Tipo>{
 		em.close();
 	}
 	
+
 
 }
