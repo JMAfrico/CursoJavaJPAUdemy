@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,7 +56,4 @@ public class Cliente {
 			this.assento = assento;
 		}
 		
-		
-
-	
 }
