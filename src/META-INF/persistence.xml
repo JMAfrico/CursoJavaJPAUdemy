@@ -14,6 +14,8 @@
                <class>modelo.umpramuitos.Pedido</class>
                <class>modelo.muitosparamuitos.Sobrinho</class>
                <class>modelo.muitosparamuitos.Tio</class>
+               <class>modelo.muitospramuitos2.Ator</class>
+               <class>modelo.muitospramuitos2.Filme</class>
               
             
         <properties>
