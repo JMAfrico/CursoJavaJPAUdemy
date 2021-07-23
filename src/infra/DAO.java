@@ -86,6 +86,17 @@ public class DAO <Tipo>{
 		em.close();
 	}
 	
+	
+	//Método de Consulta JPQL
+	
+	public List<Tipo> consultar(String nomeConsulta, Object... params){
+		TypedQuery<Tipo> query = em.createNamedQuery(nomeConsulta, classe);
+		
+		for(int i = 0;i < params.length; i+=2) {
+			query.setParameter(params[i].toString(), params[i + 1]);
+		}
+		return query.getResultList();
+	}
 
 
 }
