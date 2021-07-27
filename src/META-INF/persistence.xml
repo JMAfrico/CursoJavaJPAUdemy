@@ -17,6 +17,9 @@
                <class>modelo.muitosparamuitos.Tio</class>
                <class>modelo.muitospramuitos2.Ator</class>
                <class>modelo.muitospramuitos2.Filme</class>
+               <class>modelo.composicao.Endereco</class>
+               <class>modelo.composicao.Fornecedor</class>
+               <class>modelo.composicao.Funcionario</class>
               
             
         <properties>
