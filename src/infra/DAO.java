@@ -97,6 +97,18 @@ public class DAO <Tipo>{
 		}
 		return query.getResultList();
 	}
-
+	
+	//Método de consulta SQL(NATIVE QUERY)
+	
+	//Lista de um tipo(classe) onde pesquisa numa lista
+	public Tipo consultarUm(String nomeConsulta, Object... params){
+		List<Tipo> lista = consultar(nomeConsulta, params);
+		
+		//se retorno é vazio,retorna null, senao mostra a lista
+		return lista.isEmpty() ? null: lista.get(0);
+			
+		
+		
+	}
 
 }
